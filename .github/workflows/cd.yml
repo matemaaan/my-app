@@ -45,6 +45,8 @@ jobs:
           KUBE_CONFIG: ${{ secrets.CONFIG }}
       - name: use context
         run: export KUBECONFIG=$HOME/.kube/config
+      - name: Check
+        run: kubectl get nodes
       - name: get qbec.tar.gz
         run: wget https://github.com/splunk/qbec/releases/download/v0.15.2/qbec-linux-amd64.tar.gz
       - name: unarchive tar.gz
