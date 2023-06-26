@@ -44,7 +44,7 @@ jobs:
         env:
           KUBE_CONFIG: ${{ secrets.CONFIG }}
       - name: use context
-        run: kubectl config use-context kubernetes-admin@cluster.local
+        run: kubectl config get-contexts
       - name: get qbec.tar.gz
         run: wget https://github.com/splunk/qbec/releases/download/v0.15.2/qbec-linux-amd64.tar.gz
       - name: unarchive tar.gz
