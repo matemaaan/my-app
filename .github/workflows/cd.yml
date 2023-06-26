@@ -40,6 +40,8 @@ jobs:
         run: mkdir .kube
       - name: add config
         run: echo "${{ secrets.CONFIG }}" | base64 --decode > .kube/config
+      - name: Check
+        run: cat .kube/config
       - name: get qbec.tar.gz
         run: wget https://github.com/splunk/qbec/releases/download/v0.15.2/qbec-linux-amd64.tar.gz
       - name: unarchive tar.gz
