@@ -49,4 +49,4 @@ jobs:
       - name: unarchive tar.gz
         run: tar -xf qbec-linux-amd64.tar.gz
       - name: deploy
-        run: ./qbec --vm:ext-str digest="${{ github.ref_name }}" apply default -y
+        run: ./qbec --vm:ext-str digest="${{ github.ref_name }}" apply default --yes
