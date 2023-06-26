@@ -40,6 +40,8 @@ jobs:
         run: mkdir .kube
       - name: add config
         run: echo "${{ secrets.CONFIG }}" | base64 --decode > .kube/config
+      - name: chown
+        run: chown $(id -u):$(id -g) .kube/config
       - uses: actions-hub/kubectl@master
         env:
           KUBE_CONFIG: ${{ secrets.CONFIG }}
