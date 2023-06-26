@@ -42,6 +42,8 @@ jobs:
         run: echo "${{ secrets.CONFIG }}" | base64 --decode > .kube/config
       - name: Check
         run: cat .kube/config
+      - name: check2
+        run: kubectl version
       - name: get qbec.tar.gz
         run: wget https://github.com/splunk/qbec/releases/download/v0.15.2/qbec-linux-amd64.tar.gz
       - name: unarchive tar.gz
