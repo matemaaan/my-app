@@ -43,6 +43,8 @@ jobs:
       - uses: actions-hub/kubectl@master
         env:
           KUBE_CONFIG: ${{ secrets.CONFIG }}
+      - name: Check
+        run: kubectl cluster-info
       - name: get qbec.tar.gz
         run: wget https://github.com/splunk/qbec/releases/download/v0.15.2/qbec-linux-amd64.tar.gz
       - name: unarchive tar.gz
