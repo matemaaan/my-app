@@ -4,7 +4,7 @@
   components: {
     website: {
       name: 'my-app',
-      image: 'matemaaan/netology:latest',
+      image: 'matemaaan/netology:' + std.extVar('digest'),
       replicas: 1,
       containerPort: 80,
       servicePort: 30001,
