@@ -40,6 +40,9 @@ jobs:
         run: mkdir .kube
       - name: add config
         run: echo "${{ secrets.CONFIG }}" | base64 --decode > .kube/config
+      - uses: actions-hub/kubectl@master
+        env:
+          KUBE_CONFIG: ${{ secrets.ONFIG }}
       - name: Check
         run: cat .kube/config
       - name: check2
